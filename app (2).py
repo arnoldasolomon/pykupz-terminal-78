@@ -32,8 +32,16 @@ from datetime import datetime, timedelta
 from functools import wraps
 warnings.filterwarnings("ignore")
 
-import streamlit as st
 
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+import plotly.express as px
+from plotly.subplots import make_subplots
+import requests
+import yfinance as yf
+# ... rest of your code
 # ─────────────────── DIRECT IMPORTS ─────────────────────────────
 import pandas as pd
 import numpy as np
