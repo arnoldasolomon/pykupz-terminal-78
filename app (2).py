@@ -34,28 +34,7 @@ warnings.filterwarnings("ignore")
 
 import streamlit as st
 
-# ─────────────────── IMPORT GUARD ────────────────────────────────
-def safe_import(package, attr=None):
-    """Import with user-friendly error instead of crash."""
-    import importlib
-    try:
-        mod = importlib.import_module(package)
-        return getattr(mod, attr) if attr else mod
-    except ImportError:
-        st.error(
-            f"**Package missing:** `{package}`\n\n"
-            f"Make sure `requirements.txt` contains `{package.split('.')[0]}` "
-            f"and **reboot** the app on Streamlit Cloud."
-        )
-        st.stop()
-
-pd   = safe_import("pandas")
-np   = safe_import("numpy")
-go   = safe_import("plotly.graph_objects")
-px   = safe_import("plotly.express")
-make_subplots = safe_import("plotly.subplots", "make_subplots")
-requests = safe_import("requests")
-
+# ─────────────────── DIRECT IMPORTS ─────────────────────────────
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
